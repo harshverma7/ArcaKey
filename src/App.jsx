@@ -52,85 +52,85 @@ function App() {
     >
       <ParticlesBackground isDarkMode={isDarkMode} />
 
-      <header className="flex items-center justify-between p-6">
-        <div className="flex items-center gap-3">
+      <header className="flex items-center justify-between p-4 sm:p-6">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div
-            className={`w-8 h-8 ${
+            className={`w-6 h-6 sm:w-8 sm:h-8 ${
               isDarkMode ? "bg-white" : "bg-gray-900"
             } rounded-lg flex items-center justify-center transition-colors duration-300`}
           >
             <div className="relative">
               <div
-                className={`w-4 h-3 border-2 ${
+                className={`w-3 h-2.5 sm:w-4 sm:h-3 border-2 ${
                   isDarkMode ? "border-black" : "border-white"
                 } rounded-sm transition-colors duration-300`}
               ></div>
               <div
-                className={`w-1.5 h-1.5 ${
+                className={`w-1 h-1 sm:w-1.5 sm:h-1.5 ${
                   isDarkMode ? "bg-black" : "bg-white"
-                } rounded-full absolute top-1 left-1.5 transition-colors duration-300`}
+                } rounded-full absolute top-0.5 sm:top-1 left-1 sm:left-1.5 transition-colors duration-300`}
               ></div>
             </div>
           </div>
-          <span className="text-xl font-semibold">ArcaKey</span>
+          <span className="text-lg sm:text-xl font-semibold">ArcaKey</span>
           <span
-            className={`text-sm ${
+            className={`text-xs sm:text-sm ${
               isDarkMode
                 ? "text-gray-400 bg-gray-800"
                 : "text-gray-600 bg-gray-200"
-            } px-2 py-1 rounded transition-colors duration-300`}
+            } px-1.5 sm:px-2 py-0.5 sm:py-1 rounded transition-colors duration-300`}
           >
-            v1.0
+            v1.1
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <div
-            className={`w-6 h-6 ${
+            className={`w-5 h-5 sm:w-6 sm:h-6 ${
               isDarkMode ? "text-gray-400" : "text-orange-400"
-            } transition-colors duration-300 text-lg`}
+            } transition-colors duration-300 text-base sm:text-lg`}
           >
             ☀
           </div>
           <button
             onClick={toggleTheme}
-            className={`w-10 h-6 ${
+            className={`w-8 h-5 sm:w-10 sm:h-6 ${
               isDarkMode ? "bg-gray-700" : "bg-blue-200"
             } rounded-full relative transition-colors duration-300 cursor-pointer`}
           >
             <div
-              className={`w-5 h-5 bg-white rounded-full absolute top-0.5 transition-transform duration-300 ${
-                isDarkMode ? "translate-x-4" : "translate-x-0"
+              className={`w-4 h-4 sm:w-5 sm:h-5 bg-white rounded-full absolute top-0.5 transition-transform duration-300 ${
+                isDarkMode ? "translate-x-3 sm:translate-x-4" : "translate-x-0"
               }`}
             ></div>
           </button>
           <div
-            className={`w-6 h-6 ${
+            className={`w-5 h-5 sm:w-6 sm:h-6 ${
               isDarkMode ? "text-indigo-400" : "text-gray-400"
-            } transition-colors duration-300 text-lg`}
+            } transition-colors duration-300 text-base sm:text-lg`}
           >
             ☽
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-6 py-8 max-w-2xl">
+      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-2xl">
         {step === "blockchain" && (
           <div className="text-center animate-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight px-2">
               ArcaKey supports multiple blockchains
             </h1>
             <p
-              className={`text-2xl ${
+              className={`text-xl sm:text-2xl ${
                 isDarkMode ? "text-gray-300" : "text-gray-700"
-              } mb-16 font-medium tracking-wide`}
+              } mb-12 sm:mb-16 font-medium tracking-wide px-2`}
             >
               Minimal wallet. Maximum reach.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-md mx-auto px-4">
               <button
                 onClick={() => handleBlockchainSelect("solana")}
-                className={`w-full sm:w-auto font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg min-w-[140px] text-lg ${
+                className={`w-full sm:w-auto font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg min-w-[140px] text-base sm:text-lg ${
                   isDarkMode
                     ? "bg-white text-black hover:bg-gray-100"
                     : "bg-gray-900 text-white hover:bg-gray-800"
@@ -140,7 +140,7 @@ function App() {
               </button>
               <button
                 onClick={() => handleBlockchainSelect("ethereum")}
-                className={`w-full sm:w-auto font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg border min-w-[140px] text-lg ${
+                className={`w-full sm:w-auto font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg border min-w-[140px] text-base sm:text-lg ${
                   isDarkMode
                     ? "bg-gray-800 text-white hover:bg-gray-700 border-gray-600 hover:border-gray-500"
                     : "bg-white text-gray-900 hover:bg-gray-50 border-gray-300 hover:border-gray-400"
@@ -160,27 +160,29 @@ function App() {
                 isDarkMode
                   ? "text-gray-400 hover:text-white"
                   : "text-gray-600 hover:text-gray-900"
-              } mb-6 flex items-center gap-2 transition-all duration-200 hover:translate-x-1`}
+              } mb-4 sm:mb-6 flex items-center gap-2 transition-all duration-200 hover:translate-x-1`}
             >
               ← Back
             </button>
 
-            <h1 className="text-4xl font-bold mb-4">Secret Recovery Phrase</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
+              Secret Recovery Phrase
+            </h1>
             <p
               className={`${
                 isDarkMode ? "text-gray-400" : "text-gray-600"
-              } text-lg mb-8`}
+              } text-base sm:text-lg mb-6 sm:mb-8`}
             >
               Save these words in a safe place.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <input
                 type="text"
                 value={mnemonic}
                 onChange={(e) => setMnemonic(e.target.value)}
                 placeholder="Enter your secret phrase (or leave blank to generate)"
-                className={`w-full border rounded-lg px-4 py-4 transition-colors duration-300 focus:outline-none focus:ring-2 focus:border-transparent ${
+                className={`w-full border rounded-lg px-3 sm:px-4 py-3 sm:py-4 text-sm sm:text-base transition-colors duration-300 focus:outline-none focus:ring-2 focus:border-transparent ${
                   isDarkMode
                     ? "bg-gray-900 border-gray-700 text-white placeholder-gray-500 focus:ring-white"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-blue-500"
@@ -189,7 +191,7 @@ function App() {
 
               <button
                 onClick={handleGenerateWallet}
-                className={`w-full font-medium py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-102 hover:shadow-lg active:scale-98 ${
+                className={`w-full font-medium py-3 sm:py-4 px-4 sm:px-6 rounded-lg text-base sm:text-base transition-all duration-300 transform hover:scale-102 hover:shadow-lg active:scale-98 ${
                   isDarkMode
                     ? "bg-white text-black hover:bg-gray-100"
                     : "bg-gray-900 text-white hover:bg-gray-800"
@@ -202,7 +204,7 @@ function App() {
         )}
 
         {step === "wallets" && (
-          <div className="animate-in space-y-6">
+          <div className="animate-in space-y-4 sm:space-y-6">
             <div className="flex items-center justify-between">
               <button
                 onClick={handleBack}
@@ -220,7 +222,7 @@ function App() {
                   isDarkMode
                     ? "text-gray-400 hover:text-red-400"
                     : "text-gray-600 hover:text-red-500"
-                } text-sm transition-all duration-200 hover:scale-105`}
+                } text-xs sm:text-sm transition-all duration-200 hover:scale-105`}
               >
                 Reset Wallet
               </button>
@@ -233,22 +235,24 @@ function App() {
                   : "bg-white border-gray-200"
               } border rounded-lg overflow-hidden transition-colors duration-300`}
             >
-              <div className="flex items-center justify-between p-6">
+              <div className="flex items-center justify-between p-4 sm:p-6">
                 <button
                   onClick={() => setShowSeedPhrase(!showSeedPhrase)}
-                  className={`flex items-center gap-3 text-left ${
+                  className={`flex items-center gap-2 sm:gap-3 text-left ${
                     isDarkMode ? "hover:bg-gray-800" : "hover:bg-gray-50"
-                  } transition-all duration-300 flex-1 -m-6 p-6 rounded-lg`}
+                  } transition-all duration-300 flex-1 -m-4 sm:-m-6 p-4 sm:p-6 rounded-lg`}
                 >
-                  <span className="text-xl font-semibold">
+                  <span className="text-lg sm:text-xl font-semibold">
                     Your Secret Phrase
                   </span>
                   <span
                     className={`${
                       isDarkMode ? "text-gray-400" : "text-gray-500"
-                    } text-xl transition-transform duration-300 ml-auto`}
+                    } text-base sm:text-lg transition-transform duration-300 ml-auto ${
+                      showSeedPhrase ? "rotate-180" : ""
+                    }`}
                   >
-                    {showSeedPhrase ? "▼" : "▶"}
+                    ↓
                   </span>
                 </button>
                 <button
@@ -257,7 +261,7 @@ function App() {
                     isDarkMode
                       ? "text-gray-400 hover:text-white hover:bg-gray-700"
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                  } px-3 py-1.5 rounded-md transition-all duration-200 text-sm font-medium transform hover:scale-105 active:scale-95 ml-3`}
+                  } px-2 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all duration-200 text-xs sm:text-sm font-medium transform hover:scale-105 active:scale-95 ml-2 sm:ml-3`}
                   title="Copy phrase"
                 >
                   Copy
@@ -266,12 +270,12 @@ function App() {
 
               {showSeedPhrase && (
                 <div
-                  className={`px-6 pb-6 border-t ${
+                  className={`px-4 sm:px-6 pb-4 sm:pb-6 border-t ${
                     isDarkMode ? "border-gray-800" : "border-gray-200"
                   }`}
                 >
-                  <div className="mt-6">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-6">
+                  <div className="mt-4 sm:mt-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-6">
                       {mnemonic.split(" ").map((word, index) => (
                         <div
                           key={index}
@@ -279,7 +283,7 @@ function App() {
                             isDarkMode
                               ? "bg-gray-800 border-gray-700 hover:border-gray-600"
                               : "bg-gray-50 border-gray-200 hover:border-gray-300"
-                          } rounded-lg p-3 border transition-colors`}
+                          } rounded-lg p-2 sm:p-3 border transition-colors`}
                         >
                           <div
                             className={`text-xs ${
@@ -289,7 +293,7 @@ function App() {
                             {index + 1}
                           </div>
                           <div
-                            className={`text-sm font-mono ${
+                            className={`text-xs sm:text-sm font-mono ${
                               isDarkMode ? "text-white" : "text-gray-900"
                             }`}
                           >
@@ -300,16 +304,16 @@ function App() {
                     </div>
 
                     <div
-                      className={`flex items-center justify-between pt-4 border-t ${
+                      className={`flex flex-col sm:flex-row items-start sm:items-center justify-between pt-3 sm:pt-4 border-t gap-2 sm:gap-0 ${
                         isDarkMode ? "border-gray-800" : "border-gray-200"
                       }`}
                     >
                       <div
-                        className={`flex items-center gap-2 text-yellow-400 text-sm ${
+                        className={`flex items-center gap-2 text-yellow-400 text-xs sm:text-sm ${
                           !isDarkMode && "text-orange-500"
                         }`}
                       >
-                        <span className="text-lg">⚠️</span>
+                        <span className="text-base sm:text-lg">⚠️</span>
                         <span>Never share your secret phrase with anyone</span>
                       </div>
                       <div
@@ -326,8 +330,8 @@ function App() {
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold capitalize">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold capitalize">
                   {selectedBlockchain} Wallet
                 </h2>
               </div>
@@ -344,11 +348,11 @@ function App() {
       </main>
 
       {step === "blockchain" && (
-        <footer className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+        <footer className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 px-4">
           <p
             className={`${
               isDarkMode ? "text-gray-500" : "text-gray-600"
-            } text-sm`}
+            } text-xs sm:text-sm text-center`}
           >
             Designed and Developed by{" "}
             <a
