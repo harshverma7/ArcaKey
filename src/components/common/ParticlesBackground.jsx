@@ -7,11 +7,8 @@ export function ParticlesBackground({ isDarkMode }) {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async () => {
-    // Particles loaded callback
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
-  // Theme-based colors
   const particleColors = isDarkMode
     ? ["#64748b", "#94a3b8", "#cbd5e1"]
     : ["#8b5cf6", "#3b82f6", "#06b6d4"];

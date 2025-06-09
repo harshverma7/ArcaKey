@@ -1,4 +1,5 @@
 import { useState } from "react";
+import IconButton from "../../ui/IconButton";
 
 export function WalletCard({
   wallet,
@@ -29,28 +30,24 @@ export function WalletCard({
           Wallet {index + 1}
         </h3>
         <div className="flex items-center gap-1 sm:gap-2">
-          <button
+          <IconButton
             onClick={() => onCopyAddress(wallet.publicKey, "address", index)}
-            className={`${
-              isDarkMode
-                ? "text-gray-400 hover:text-white hover:bg-gray-800"
-                : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-            } px-2 py-1 rounded transition-all duration-200 text-xs sm:text-sm transform hover:scale-105 active:scale-95`}
-            title="Copy public key"
+            variant="ghost"
+            size="sm"
+            isDarkMode={isDarkMode}
+            tooltip="Copy public key"
           >
             Copy
-          </button>
-          <button
+          </IconButton>
+          <IconButton
             onClick={() => onDeleteWallet(index)}
-            className={`${
-              isDarkMode
-                ? "text-gray-400 hover:text-red-400 hover:bg-gray-800"
-                : "text-gray-600 hover:text-red-500 hover:bg-gray-100"
-            } px-2 py-1 rounded transition-all duration-200 text-xs sm:text-sm transform hover:scale-105 active:scale-95`}
-            title="Delete wallet"
+            variant="danger"
+            size="sm"
+            isDarkMode={isDarkMode}
+            tooltip="Delete wallet"
           >
             Delete
-          </button>
+          </IconButton>
         </div>
       </div>
 
@@ -90,19 +87,17 @@ export function WalletCard({
           >
             Private Key
           </label>
-          <button
+          <IconButton
             onClick={togglePrivateKey}
-            className={`${
-              isDarkMode
-                ? "text-gray-400 hover:text-white hover:bg-gray-700"
-                : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-            } px-2 sm:px-3 py-1 sm:py-1.5 rounded-md transition-all duration-200 text-xs sm:text-sm font-medium transform hover:scale-105 active:scale-95`}
-            title={
+            variant="ghost"
+            size="sm"
+            isDarkMode={isDarkMode}
+            tooltip={
               isPrivateKeyVisible ? "Hide private key" : "Show private key"
             }
           >
             {isPrivateKeyVisible ? "Hide" : "Show"}
-          </button>
+          </IconButton>
         </div>
 
         <div
@@ -125,22 +120,23 @@ export function WalletCard({
 
         {isPrivateKeyVisible && (
           <div className="mt-2 sm:mt-3 flex justify-end">
-            <button
+            <IconButton
               onClick={() =>
                 onCopyPrivateKey(wallet.privateKey, "privateKey", index)
               }
-              className={`text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-md font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 ${
+              variant={copied === `privateKey-${index}` ? "success" : "primary"}
+              size="sm"
+              isDarkMode={isDarkMode}
+              className={`text-xs ${
                 copied === `privateKey-${index}`
                   ? "bg-green-600 text-white"
-                  : isDarkMode
-                  ? "bg-gray-700 text-gray-300 hover:bg-gray-600 hover:shadow-md"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300 hover:shadow-md"
+                  : ""
               }`}
             >
               {copied === `privateKey-${index}`
                 ? "✓ Copied"
                 : "Copy Private Key"}
-            </button>
+            </IconButton>
           </div>
         )}
       </div>

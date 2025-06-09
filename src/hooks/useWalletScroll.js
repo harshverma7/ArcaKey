@@ -28,5 +28,5 @@ export function useWalletScroll(walletsCount, delay = 100) {
     }
   }, [walletsCount, delay]);
 
-  return walletRefs;
+  return { walletRefs };
 }
