@@ -25,7 +25,7 @@ export function Logo({ isDarkMode }) {
           isDarkMode ? "text-gray-400 bg-gray-800" : "text-gray-600 bg-gray-200"
         } px-1.5 sm:px-2 py-0.5 sm:py-1 rounded transition-colors duration-300`}
       >
-        v1.1
+        v2.0
       </span>
     </div>
   );
